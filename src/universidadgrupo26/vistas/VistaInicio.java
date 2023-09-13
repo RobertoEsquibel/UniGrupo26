@@ -56,6 +56,11 @@ public class VistaInicio extends javax.swing.JFrame {
         Alumno.setText("Alumno");
 
         FormularioDeAlumno.setText("Formulario de Alumno");
+        FormularioDeAlumno.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FormularioDeAlumnoActionPerformed(evt);
+            }
+        });
         Alumno.add(FormularioDeAlumno);
 
         jMenuBar1.add(Alumno);
@@ -102,6 +107,16 @@ public class VistaInicio extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void FormularioDeAlumnoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FormularioDeAlumnoActionPerformed
+        // TODO add your handling code here:
+        Escritorio.removeAll();
+        Escritorio.repaint();
+        FormularioDeAlumnoView fda=new FormularioDeAlumnoView();
+        fda.setVisible(true);
+        Escritorio.add(fda);
+        
+    }//GEN-LAST:event_FormularioDeAlumnoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -152,4 +167,14 @@ public class VistaInicio extends javax.swing.JFrame {
     private javax.swing.JMenu Salir;
     private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
+
+    private static class FormularioDeAlumnoView {
+
+        public FormularioDeAlumnoView() {
+        }
+
+        private void setVisible(boolean b) {
+            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        }
+    }
 }
