@@ -27,17 +27,77 @@ public class VistaInicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        Escritorio = new javax.swing.JDesktopPane();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        Alumno = new javax.swing.JMenu();
+        FormularioDeAlumno = new javax.swing.JMenuItem();
+        Materia = new javax.swing.JMenu();
+        FormularioDeMateria = new javax.swing.JMenuItem();
+        Administracion = new javax.swing.JMenu();
+        ManejoDeInscripciones = new javax.swing.JMenuItem();
+        ManipulacionDeNotas = new javax.swing.JMenuItem();
+        Consultas = new javax.swing.JMenu();
+        AlumnoPorMateria = new javax.swing.JMenuItem();
+        Salir = new javax.swing.JMenu();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        javax.swing.GroupLayout EscritorioLayout = new javax.swing.GroupLayout(Escritorio);
+        Escritorio.setLayout(EscritorioLayout);
+        EscritorioLayout.setHorizontalGroup(
+            EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        EscritorioLayout.setVerticalGroup(
+            EscritorioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 279, Short.MAX_VALUE)
+        );
+
+        Alumno.setText("Alumno");
+
+        FormularioDeAlumno.setText("Formulario de Alumno");
+        Alumno.add(FormularioDeAlumno);
+
+        jMenuBar1.add(Alumno);
+
+        Materia.setText("Materia");
+
+        FormularioDeMateria.setText("Formulario de Materia");
+        Materia.add(FormularioDeMateria);
+
+        jMenuBar1.add(Materia);
+
+        Administracion.setText("Administracion");
+
+        ManejoDeInscripciones.setText("Manejo de Inscripciones");
+        Administracion.add(ManejoDeInscripciones);
+
+        ManipulacionDeNotas.setText("Manipulacion de notas");
+        Administracion.add(ManipulacionDeNotas);
+
+        jMenuBar1.add(Administracion);
+
+        Consultas.setText("Consultas");
+
+        AlumnoPorMateria.setText("Alumnos por Materia");
+        Consultas.add(AlumnoPorMateria);
+
+        jMenuBar1.add(Consultas);
+
+        Salir.setText("Salir");
+        jMenuBar1.add(Salir);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(Escritorio)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(Escritorio)
         );
 
         pack();
@@ -79,5 +139,17 @@ public class VistaInicio extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu Administracion;
+    private javax.swing.JMenu Alumno;
+    private javax.swing.JMenuItem AlumnoPorMateria;
+    private javax.swing.JMenu Consultas;
+    private javax.swing.JDesktopPane Escritorio;
+    private javax.swing.JMenuItem FormularioDeAlumno;
+    private javax.swing.JMenuItem FormularioDeMateria;
+    private javax.swing.JMenuItem ManejoDeInscripciones;
+    private javax.swing.JMenuItem ManipulacionDeNotas;
+    private javax.swing.JMenu Materia;
+    private javax.swing.JMenu Salir;
+    private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }
