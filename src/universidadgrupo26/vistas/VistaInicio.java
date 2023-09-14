@@ -85,6 +85,11 @@ public class VistaInicio extends javax.swing.JFrame {
         Consultas.setText("Consultas");
 
         AlumnoPorMateria.setText("Alumnos por Materia");
+        AlumnoPorMateria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AlumnoPorMateriaActionPerformed(evt);
+            }
+        });
         Consultas.add(AlumnoPorMateria);
 
         jMenuBar1.add(Consultas);
@@ -118,6 +123,16 @@ public class VistaInicio extends javax.swing.JFrame {
         Escritorio.moveToFront(fda);    
         
     }//GEN-LAST:event_FormularioDeAlumnoActionPerformed
+
+    private void AlumnoPorMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlumnoPorMateriaActionPerformed
+        // TODO add your handling code here:
+        Escritorio.removeAll();
+        Escritorio.repaint();
+        ListadoDeAlumnoPorMateria ldapm= new ListadoDeAlumnoPorMateria();
+        ldapm.setVisible(true);
+        Escritorio.add(ldapm);
+        Escritorio.moveToFront(ldapm);
+    }//GEN-LAST:event_AlumnoPorMateriaActionPerformed
 
     /**
      * @param args the command line arguments
