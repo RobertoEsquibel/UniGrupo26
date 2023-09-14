@@ -112,9 +112,10 @@ public class VistaInicio extends javax.swing.JFrame {
         // TODO add your handling code here:
         Escritorio.removeAll();
         Escritorio.repaint();
-        FormularioDeAlumnoView fda=new FormularioDeAlumnoView();
+        FormularioDeAlumno fda = new FormularioDeAlumno();
         fda.setVisible(true);
         Escritorio.add(fda);
+        Escritorio.moveToFront(fda);    
         
     }//GEN-LAST:event_FormularioDeAlumnoActionPerformed
 
