@@ -68,6 +68,11 @@ public class VistaInicio extends javax.swing.JFrame {
         Materia.setText("Materia");
 
         FormularioDeMateria.setText("Formulario de Materia");
+        FormularioDeMateria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FormularioDeMateriaActionPerformed(evt);
+            }
+        });
         Materia.add(FormularioDeMateria);
 
         jMenuBar1.add(Materia);
@@ -118,6 +123,15 @@ public class VistaInicio extends javax.swing.JFrame {
         Escritorio.moveToFront(fda);    
         
     }//GEN-LAST:event_FormularioDeAlumnoActionPerformed
+
+    private void FormularioDeMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FormularioDeMateriaActionPerformed
+        Escritorio.removeAll();
+        Escritorio.repaint();
+        Materia fdm = new Materia();
+        fdm.setVisible(true);
+        Escritorio.add(fdm);
+        Escritorio.moveToFront(fdm);
+    }//GEN-LAST:event_FormularioDeMateriaActionPerformed
 
     /**
      * @param args the command line arguments
