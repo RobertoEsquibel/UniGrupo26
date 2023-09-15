@@ -7,6 +7,7 @@ package universidadgrupo26.vistas;
 
 import universidadgrupo26.entidades.Inscripcion;
 
+
 /**
  *
  * @author macbookpro
@@ -43,6 +44,8 @@ public class VistaInicio extends javax.swing.JFrame {
         Salir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        Escritorio.setPreferredSize(new java.awt.Dimension(600, 700));
 
         javax.swing.GroupLayout EscritorioLayout = new javax.swing.GroupLayout(Escritorio);
         Escritorio.setLayout(EscritorioLayout);
@@ -97,6 +100,11 @@ public class VistaInicio extends javax.swing.JFrame {
         Consultas.setText("Consultas");
 
         AlumnoPorMateria.setText("Alumnos por Materia");
+        AlumnoPorMateria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AlumnoPorMateriaActionPerformed(evt);
+            }
+        });
         Consultas.add(AlumnoPorMateria);
 
         jMenuBar1.add(Consultas);
@@ -110,11 +118,11 @@ public class VistaInicio extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Escritorio)
+            .addComponent(Escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Escritorio)
+            .addComponent(Escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
         );
 
         pack();
@@ -131,6 +139,16 @@ public class VistaInicio extends javax.swing.JFrame {
         
     }//GEN-LAST:event_FormularioDeAlumnoActionPerformed
 
+    private void AlumnoPorMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlumnoPorMateriaActionPerformed
+        // TODO add your handling code here:
+        Escritorio.removeAll();
+        Escritorio.repaint();
+        ListadoDeAlumnoPorMateria ldapm= new ListadoDeAlumnoPorMateria();
+        ldapm.setVisible(true);
+        Escritorio.add(ldapm);
+        Escritorio.moveToFront(ldapm);
+    }//GEN-LAST:event_AlumnoPorMateriaActionPerformed
+
     private void FormularioDeMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FormularioDeMateriaActionPerformed
         Escritorio.removeAll();
         Escritorio.repaint();
@@ -140,50 +158,51 @@ public class VistaInicio extends javax.swing.JFrame {
         Escritorio.moveToFront(fdm);
     }//GEN-LAST:event_FormularioDeMateriaActionPerformed
 
+
     private void ManejoDeInscripcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManejoDeInscripcionesActionPerformed
-        Escritorio.removeAll();
+       Escritorio.removeAll();
         Escritorio.repaint();
-        Inscripcion fdi = new Inscripcion();
-        fdi.setVisible(true);
+        ManejoDeInscripciones fdi = new ManejoDeInscripciones();
+       fdi.setVisible(true);
         Escritorio.add(fdi);
         Escritorio.moveToFront(fdi);
-    }            
+                
     }//GEN-LAST:event_ManejoDeInscripcionesActionPerformed
+
+
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
+//   public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+            //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VistaInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VistaInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VistaInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VistaInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+//        try {
+//            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+//               if ("Nimbus".equals(info.getName())) {
+//                   javax.swing.UIManager.setLookAndFeel(info.getClassName());                    break;
+//                }
+//            }
+//        } catch (ClassNotFoundException ex) {
+//            java.util.logging.Logger.getLogger(VistaInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (InstantiationException ex) {
+//            java.util.logging.Logger.getLogger(VistaInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (IllegalAccessException ex) {
+//            java.util.logging.Logger.getLogger(VistaInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+//            java.util.logging.Logger.getLogger(VistaInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+//        }
+//        //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new VistaInicio().setVisible(true);
-            }
-        });
-    }
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                new VistaInicio().setVisible(true);
+//            }
+//        });
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu Administracion;
