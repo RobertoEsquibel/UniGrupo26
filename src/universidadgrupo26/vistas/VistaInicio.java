@@ -5,6 +5,8 @@
  */
 package universidadgrupo26.vistas;
 
+import universidadgrupo26.entidades.Inscripcion;
+
 /**
  *
  * @author macbookpro
@@ -80,6 +82,11 @@ public class VistaInicio extends javax.swing.JFrame {
         Administracion.setText("Administracion");
 
         ManejoDeInscripciones.setText("Manejo de Inscripciones");
+        ManejoDeInscripciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ManejoDeInscripcionesActionPerformed(evt);
+            }
+        });
         Administracion.add(ManejoDeInscripciones);
 
         ManipulacionDeNotas.setText("Manipulacion de notas");
@@ -132,6 +139,16 @@ public class VistaInicio extends javax.swing.JFrame {
         Escritorio.add(fdm);
         Escritorio.moveToFront(fdm);
     }//GEN-LAST:event_FormularioDeMateriaActionPerformed
+
+    private void ManejoDeInscripcionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManejoDeInscripcionesActionPerformed
+        Escritorio.removeAll();
+        Escritorio.repaint();
+        Inscripcion fdi = new Inscripcion();
+        fdi.setVisible(true);
+        Escritorio.add(fdi);
+        Escritorio.moveToFront(fdi);
+    }            
+    }//GEN-LAST:event_ManejoDeInscripcionesActionPerformed
 
     /**
      * @param args the command line arguments
