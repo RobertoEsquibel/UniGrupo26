@@ -12,7 +12,7 @@ import javax.swing.table.DefaultTableModel;
  * @author Marisa
  */
 public class ListadoDeAlumnoPorMateria extends javax.swing.JInternalFrame {
-    private DefaultTableModel modelo= new DefaultTableModel();
+    private DefaultTableModel modelo = new DefaultTableModel();
     public boolean isCellEditable(int f, int c){
     return false;
     }
