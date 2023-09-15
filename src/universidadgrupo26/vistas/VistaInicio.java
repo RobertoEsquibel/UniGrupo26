@@ -42,6 +42,8 @@ public class VistaInicio extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        Escritorio.setPreferredSize(new java.awt.Dimension(600, 700));
+
         javax.swing.GroupLayout EscritorioLayout = new javax.swing.GroupLayout(Escritorio);
         Escritorio.setLayout(EscritorioLayout);
         EscritorioLayout.setHorizontalGroup(
@@ -68,6 +70,11 @@ public class VistaInicio extends javax.swing.JFrame {
         Materia.setText("Materia");
 
         FormularioDeMateria.setText("Formulario de Materia");
+        FormularioDeMateria.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FormularioDeMateriaActionPerformed(evt);
+            }
+        });
         Materia.add(FormularioDeMateria);
 
         jMenuBar1.add(Materia);
@@ -103,11 +110,11 @@ public class VistaInicio extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Escritorio)
+            .addComponent(Escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Escritorio)
+            .addComponent(Escritorio, javax.swing.GroupLayout.DEFAULT_SIZE, 279, Short.MAX_VALUE)
         );
 
         pack();
@@ -133,6 +140,16 @@ public class VistaInicio extends javax.swing.JFrame {
         Escritorio.add(ldapm);
         Escritorio.moveToFront(ldapm);
     }//GEN-LAST:event_AlumnoPorMateriaActionPerformed
+
+    private void FormularioDeMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FormularioDeMateriaActionPerformed
+        Escritorio.removeAll();
+        Escritorio.repaint();
+        Materia fdm = new Materia();
+        fdm.setVisible(true);
+        Escritorio.add(fdm);
+        Escritorio.moveToFront(fdm);
+    }//GEN-LAST:event_FormularioDeMateriaActionPerformed
+
 
     /**
      * @param args the command line arguments
