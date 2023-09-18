@@ -156,8 +156,8 @@ private void cargarComboMateria(){
     //REVISAR
     
     
-    private void cargarDatosTabla(Alumno alumno);{
-    modelo.addRow(new Object[]{alumno.getID(), alumno.getDNI(), alumno.getApellido(), alumno.getNombre(); });
+   // private void cargarDatosTabla(Alumno alumno);{
+   // modelo.addRow(new Object[]{alumno.getID(), alumno.getDNI(), alumno.getApellido(), alumno.getNombre(); });
 }
     
     
@@ -165,4 +165,4 @@ private void cargarComboMateria(){
 }
 
 
-}
+ //} 

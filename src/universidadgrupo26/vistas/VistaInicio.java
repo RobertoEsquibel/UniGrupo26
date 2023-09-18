@@ -93,6 +93,11 @@ public class VistaInicio extends javax.swing.JFrame {
         Administracion.add(ManejoDeInscripciones);
 
         ManipulacionDeNotas.setText("Manipulacion de notas");
+        ManipulacionDeNotas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ManipulacionDeNotasActionPerformed(evt);
+            }
+        });
         Administracion.add(ManipulacionDeNotas);
 
         jMenuBar1.add(Administracion);
@@ -169,6 +174,19 @@ public class VistaInicio extends javax.swing.JFrame {
                 
     }//GEN-LAST:event_ManejoDeInscripcionesActionPerformed
 
+    private void ManipulacionDeNotasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ManipulacionDeNotasActionPerformed
+       Escritorio.removeAll();
+       Escritorio.repaint();
+       ManipulacionDeNotas mdn = new ManipulacionDeNotas();
+       mdn.setVisible(true);
+       Escritorio.add(mdn);
+       Escritorio.moveToFront(mdn);
+       
+       
+        
+     
+    }//GEN-LAST:event_ManipulacionDeNotasActionPerformed
+
 
 
     /**
@@ -227,5 +245,12 @@ public class VistaInicio extends javax.swing.JFrame {
         private void setVisible(boolean b) {
             throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
         }
+    }
+    public static void main (String args[]){
+            java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new VistaInicio().setVisible(true);
+            }
+        });
     }
 }
