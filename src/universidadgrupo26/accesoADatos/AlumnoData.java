@@ -58,7 +58,7 @@ public class AlumnoData {
 
             if (rs.next()) {
                 alumno = new Alumno();
-                alumno.setIdAlumno(id);
+                alumno.setIdAlumno(rs.getInt("idAlumno"));
                 alumno.setDni(rs.getInt("dni"));
                 alumno.setApellido(rs.getString("apellido"));
                 alumno.setNombre(rs.getString("nombre"));
@@ -157,6 +157,7 @@ public class AlumnoData {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Alumno " + ex.getMessage());
         }
 }
+    
     public void eliminarAlumno(int id) {
 
         try {
