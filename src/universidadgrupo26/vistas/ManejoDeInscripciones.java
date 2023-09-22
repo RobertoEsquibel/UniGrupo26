@@ -5,6 +5,8 @@
  */
 package universidadgrupo26.vistas;
 
+import javax.swing.table.DefaultTableModel;
+
 
 
 /**
@@ -12,11 +14,12 @@ package universidadgrupo26.vistas;
  * @author ELIANA
  */
 public class ManejoDeInscripciones extends javax.swing.JInternalFrame {
-
+private DefaultTableModel modelo= new DefaultTableModel();
   
   
     public ManejoDeInscripciones() {
         initComponents();
+        armarCabecera();
     }
 
     
@@ -31,7 +34,7 @@ public class ManejoDeInscripciones extends javax.swing.JInternalFrame {
         MateriasInscriptas = new javax.swing.JRadioButton();
         MateriasNoInscriptas = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        TablaFormulario = new javax.swing.JTable();
         inscribir = new javax.swing.JButton();
         anular = new javax.swing.JButton();
         salir = new javax.swing.JButton();
@@ -48,7 +51,7 @@ public class ManejoDeInscripciones extends javax.swing.JInternalFrame {
 
         MateriasNoInscriptas.setText("Materias No Inscriptas");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TablaFormulario.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -59,7 +62,7 @@ public class ManejoDeInscripciones extends javax.swing.JInternalFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(TablaFormulario);
 
         inscribir.setText("Inscribir");
 
@@ -140,11 +143,22 @@ public class ManejoDeInscripciones extends javax.swing.JInternalFrame {
     private javax.swing.JLabel ListadoDeMateria;
     private javax.swing.JRadioButton MateriasInscriptas;
     private javax.swing.JRadioButton MateriasNoInscriptas;
+    private javax.swing.JTable TablaFormulario;
     private javax.swing.JButton anular;
     private javax.swing.JButton inscribir;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     private javax.swing.JButton salir;
     private javax.swing.JComboBox<String> seleccion;
     // End of variables declaration//GEN-END:variables
+
+private void armarCabecera(){
+
+modelo.addColumn("id");
+modelo.addColumn("nombre");
+modelo.addColumn("anio");
+
+TablaFormulario.setModel(modelo);
+}
+
+
 }

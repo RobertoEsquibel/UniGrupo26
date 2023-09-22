@@ -148,10 +148,10 @@ public class VistaInicio extends javax.swing.JFrame {
         // TODO add your handling code here:
         Escritorio.removeAll();
         Escritorio.repaint();
-        ListadoDeAlumnoPorMateria ldapm= new ListadoDeAlumnoPorMateria();
-        ldapm.setVisible(true);
-        Escritorio.add(ldapm);
-        Escritorio.moveToFront(ldapm);
+        AlumnoPorMateria apm= new AlumnoPorMateria();
+        apm.setVisible(true);
+        Escritorio.add(apm);
+        Escritorio.moveToFront(apm);
     }//GEN-LAST:event_AlumnoPorMateriaActionPerformed
 
     private void FormularioDeMateriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FormularioDeMateriaActionPerformed
