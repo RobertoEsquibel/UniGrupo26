@@ -1,19 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package universidadgrupo26.vistas;
 
-/**
- *
- * @author macbookpro
- */
+
+import com.toedter.calendar.JDateChooser;
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import universidadgrupo26.accesoADatos.AlumnoData;
+import universidadgrupo26.entidades.Alumno;
+import  java.awt.Event;
+import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
+
 public class FormularioDeAlumno extends javax.swing.JInternalFrame {
 
-    /**
-     * Creates new form FormularioDeAlumno
-     */
+
     public FormularioDeAlumno() {
         initComponents();
     }
@@ -30,7 +31,7 @@ public class FormularioDeAlumno extends javax.swing.JInternalFrame {
         tituloAlumno = new javax.swing.JLabel();
         documento = new javax.swing.JLabel();
         jtexDocumento = new javax.swing.JTextField();
-        buscar = new javax.swing.JButton();
+        jBbuscar = new javax.swing.JButton();
         Apellido = new javax.swing.JLabel();
         jtexApellido = new javax.swing.JTextField();
         Nombre = new javax.swing.JLabel();
@@ -38,17 +39,16 @@ public class FormularioDeAlumno extends javax.swing.JInternalFrame {
         Estado = new javax.swing.JLabel();
         activo = new javax.swing.JRadioButton();
         fechadenac = new javax.swing.JLabel();
-        jtexEstado = new javax.swing.JTextField();
-        nuevo = new javax.swing.JButton();
-        eliminar = new javax.swing.JButton();
-        guardar = new javax.swing.JButton();
-        salir = new javax.swing.JButton();
+        jBeliminar = new javax.swing.JButton();
+        jBguardar = new javax.swing.JButton();
+        jBnuevo = new javax.swing.JButton();
+        jDateNacimiento = new com.toedter.calendar.JDateChooser();
 
         tituloAlumno.setText("          ALUMNO");
 
         documento.setText("Documento");
 
-        buscar.setText("Buscar");
+        jBbuscar.setText("Buscar");
 
         Apellido.setText("Apellido");
 
@@ -58,13 +58,22 @@ public class FormularioDeAlumno extends javax.swing.JInternalFrame {
 
         fechadenac.setText("Fecha de Nacimiento");
 
-        nuevo.setText("Nuevo");
+        jBeliminar.setText("Eliminar");
 
-        eliminar.setText("Eliminar");
+        jBguardar.setText("Guardar");
 
-        guardar.setText("Guardar");
+        jBnuevo.setText("Nuevo");
+        jBnuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBnuevoActionPerformed(evt);
+            }
+        });
 
-        salir.setText("Salir");
+        jDateNacimiento.addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                jDateNacimientoPropertyChange(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -72,6 +81,22 @@ public class FormularioDeAlumno extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(fechadenac)
+                            .addComponent(jBnuevo))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(jBeliminar)
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(jBguardar)
+                                .addGap(82, 82, 82))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jDateNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(47, 47, 47))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGap(111, 111, 111)
                         .addComponent(tituloAlumno)
@@ -84,31 +109,14 @@ public class FormularioDeAlumno extends javax.swing.JInternalFrame {
                             .addComponent(Estado, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(documento))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jtexDocumento, javax.swing.GroupLayout.DEFAULT_SIZE, 125, Short.MAX_VALUE)
-                            .addComponent(activo)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jtexApellido)
+                            .addComponent(activo, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jtexNombre)
-                            .addComponent(jtexEstado))))
+                            .addComponent(jtexDocumento, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(buscar)
+                .addComponent(jBbuscar)
                 .addGap(15, 15, 15))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(nuevo)
-                        .addGap(18, 18, 18)
-                        .addComponent(eliminar)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(fechadenac)
-                        .addGap(23, 23, 23)))
-                .addGap(27, 27, 27)
-                .addComponent(guardar)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(salir)
-                .addGap(19, 19, 19))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -119,7 +127,7 @@ public class FormularioDeAlumno extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(documento)
                     .addComponent(jtexDocumento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(buscar))
+                    .addComponent(jBbuscar))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Apellido)
@@ -133,20 +141,38 @@ public class FormularioDeAlumno extends javax.swing.JInternalFrame {
                     .addComponent(Estado)
                     .addComponent(activo))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(fechadenac)
-                    .addComponent(jtexEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jDateNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(nuevo)
-                    .addComponent(eliminar)
-                    .addComponent(guardar)
-                    .addComponent(salir))
-                .addContainerGap(16, Short.MAX_VALUE))
+                    .addComponent(jBeliminar)
+                    .addComponent(jBguardar)
+                    .addComponent(jBnuevo))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+     
+    
+    private void jDateNacimientoPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_jDateNacimientoPropertyChange
+       
+        
+      
+    }//GEN-LAST:event_jDateNacimientoPropertyChange
+
+    private void jBnuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBnuevoActionPerformed
+     int dni = Integer.parseInt(jtexDocumento.getText());
+        
+     LocalDate FechaNac = LocalDate.now();
+     
+    
+        Alumno a = new Alumno(dni, jtexNombre.getText(), jtexApellido.getText(), FechaNac , isIcon);
+        AlumnoData al = new AlumnoData();
+        al.guardarAlumno(a);
+    }//GEN-LAST:event_jBnuevoActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -154,17 +180,16 @@ public class FormularioDeAlumno extends javax.swing.JInternalFrame {
     private javax.swing.JLabel Estado;
     private javax.swing.JLabel Nombre;
     private javax.swing.JRadioButton activo;
-    private javax.swing.JButton buscar;
     private javax.swing.JLabel documento;
-    private javax.swing.JButton eliminar;
     private javax.swing.JLabel fechadenac;
-    private javax.swing.JButton guardar;
+    private javax.swing.JButton jBbuscar;
+    private javax.swing.JButton jBeliminar;
+    private javax.swing.JButton jBguardar;
+    private javax.swing.JButton jBnuevo;
+    private com.toedter.calendar.JDateChooser jDateNacimiento;
     private javax.swing.JTextField jtexApellido;
     private javax.swing.JTextField jtexDocumento;
-    private javax.swing.JTextField jtexEstado;
     private javax.swing.JTextField jtexNombre;
-    private javax.swing.JButton nuevo;
-    private javax.swing.JButton salir;
     private javax.swing.JLabel tituloAlumno;
     // End of variables declaration//GEN-END:variables
 }

@@ -31,7 +31,7 @@ public class Pasword extends javax.swing.JFrame {
         Mail = new javax.swing.JTextField();
         IngreseSuContraseña = new javax.swing.JLabel();
         Pasword = new javax.swing.JPasswordField();
-        ingresar = new javax.swing.JButton();
+        jBingresar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -39,7 +39,12 @@ public class Pasword extends javax.swing.JFrame {
 
         IngreseSuContraseña.setText("INGRESE SU CONTRASEÑA");
 
-        ingresar.setText("INGRSAR");
+        jBingresar.setText("INGRSAR");
+        jBingresar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBingresarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -52,10 +57,10 @@ public class Pasword extends javax.swing.JFrame {
                         .addComponent(IngreseSuMail, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(Mail, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(154, 154, 154)
-                        .addComponent(ingresar)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap(154, Short.MAX_VALUE)
+                        .addComponent(jBingresar)
+                        .addGap(159, 159, 159))
                     .addGroup(layout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(IngreseSuContraseña)
@@ -75,12 +80,16 @@ public class Pasword extends javax.swing.JFrame {
                     .addComponent(IngreseSuContraseña, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Pasword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 61, Short.MAX_VALUE)
-                .addComponent(ingresar)
+                .addComponent(jBingresar)
                 .addGap(43, 43, 43))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jBingresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBingresarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBingresarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -122,6 +131,6 @@ public class Pasword extends javax.swing.JFrame {
     private javax.swing.JLabel IngreseSuMail;
     private javax.swing.JTextField Mail;
     private javax.swing.JPasswordField Pasword;
-    private javax.swing.JButton ingresar;
+    private javax.swing.JButton jBingresar;
     // End of variables declaration//GEN-END:variables
 }

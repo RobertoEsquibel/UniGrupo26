@@ -44,6 +44,7 @@ public class VistaInicio extends javax.swing.JFrame {
         Salir = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(400, 360));
 
         Escritorio.setPreferredSize(new java.awt.Dimension(600, 700));
 

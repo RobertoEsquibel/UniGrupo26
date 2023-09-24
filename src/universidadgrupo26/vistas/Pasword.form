@@ -31,10 +31,10 @@
                       <EmptySpace max="32767" attributes="0"/>
                       <Component id="Mail" min="-2" pref="188" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="154" max="-2" attributes="0"/>
-                      <Component id="ingresar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace pref="154" max="32767" attributes="0"/>
+                      <Component id="jBingresar" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="159" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
@@ -61,7 +61,7 @@
                   <Component id="Pasword" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace pref="61" max="32767" attributes="0"/>
-              <Component id="ingresar" min="-2" max="-2" attributes="0"/>
+              <Component id="jBingresar" min="-2" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -82,10 +82,13 @@
     </Component>
     <Component class="javax.swing.JPasswordField" name="Pasword">
     </Component>
-    <Component class="javax.swing.JButton" name="ingresar">
+    <Component class="javax.swing.JButton" name="jBingresar">
       <Properties>
         <Property name="text" type="java.lang.String" value="INGRSAR"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBingresarActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

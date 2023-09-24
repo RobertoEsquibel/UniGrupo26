@@ -27,7 +27,7 @@ public class AlumnoData {
 
     public void guardarAlumno(Alumno alumno) {
 
-        String sql = "INSERT INTO alumno (dni, apellido, nombre, fechaNacimiento, estado) VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO alumno (dni, apellido, nombre, fechaNac, estado) VALUES (?, ?, ?, ?, ?)";
         try {
             PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
             ps.setInt(1, alumno.getDni());
@@ -156,8 +156,8 @@ public class AlumnoData {
         } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Alumno " + ex.getMessage());
         }
-}
-    
+    }
+
     public void eliminarAlumno(int id) {
 
         try {
@@ -173,8 +173,6 @@ public class AlumnoData {
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, " Error al acceder a la tabla Alumno");
         }
-         
-            
-        }} 
-    
- 
+
+    }
+}
