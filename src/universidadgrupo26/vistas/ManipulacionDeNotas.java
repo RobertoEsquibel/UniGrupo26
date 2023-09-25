@@ -20,6 +20,7 @@ private DefaultTableModel modelo = new DefaultTableModel();{
    
     public ManipulacionDeNotas() {
         initComponents();
+         armarCabecera();
 }
 
     /**
@@ -42,8 +43,6 @@ private DefaultTableModel modelo = new DefaultTableModel();{
         CargaDeNotas.setText("Carga de Notas");
 
         SeleccioneUnAlumno.setText("Seleccione un Alumno");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         Modelo.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -121,6 +120,18 @@ private DefaultTableModel modelo = new DefaultTableModel();{
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton salir;
     // End of variables declaration//GEN-END:variables
+
+
+private void armarCabecera(){
+
+modelo.addColumn("codigo");
+modelo.addColumn("nombre");
+modelo.addColumn("nota");
+
+Modelo.setModel(modelo);
+}
+
+
 }
 
 

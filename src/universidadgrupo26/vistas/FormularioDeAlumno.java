@@ -11,6 +11,7 @@ import universidadgrupo26.entidades.Alumno;
 import  java.awt.Event;
 import java.awt.event.ActionListener;
 import java.text.SimpleDateFormat;
+import javax.swing.JRadioButton;
 
 public class FormularioDeAlumno extends javax.swing.JInternalFrame {
 
@@ -37,12 +38,12 @@ public class FormularioDeAlumno extends javax.swing.JInternalFrame {
         Nombre = new javax.swing.JLabel();
         jtexNombre = new javax.swing.JTextField();
         Estado = new javax.swing.JLabel();
-        activo = new javax.swing.JRadioButton();
         fechadenac = new javax.swing.JLabel();
         jBeliminar = new javax.swing.JButton();
         jBguardar = new javax.swing.JButton();
         jBnuevo = new javax.swing.JButton();
         jDateNacimiento = new com.toedter.calendar.JDateChooser();
+        estado = new javax.swing.JCheckBox();
 
         tituloAlumno.setText("          ALUMNO");
 
@@ -50,15 +51,20 @@ public class FormularioDeAlumno extends javax.swing.JInternalFrame {
 
         jBbuscar.setText("Buscar");
 
-        Apellido.setText("Apellido");
+        Apellido.setText("Nombre");
 
-        Nombre.setText("Nombre");
+        Nombre.setText("Apellido");
 
         Estado.setText("Estado");
 
         fechadenac.setText("Fecha de Nacimiento");
 
         jBeliminar.setText("Eliminar");
+        jBeliminar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBeliminarActionPerformed(evt);
+            }
+        });
 
         jBguardar.setText("Guardar");
 
@@ -109,11 +115,14 @@ public class FormularioDeAlumno extends javax.swing.JInternalFrame {
                             .addComponent(Estado, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(documento))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jtexApellido)
-                            .addComponent(activo, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jtexNombre)
-                            .addComponent(jtexDocumento, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE))))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jtexApellido)
+                                .addComponent(jtexNombre)
+                                .addComponent(jtexDocumento, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(estado)
+                                .addGap(74, 74, 74)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jBbuscar)
                 .addGap(15, 15, 15))
@@ -136,11 +145,11 @@ public class FormularioDeAlumno extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Nombre)
                     .addComponent(jtexNombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(17, 17, 17)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGap(20, 20, 20)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Estado)
-                    .addComponent(activo))
-                .addGap(18, 18, 18)
+                    .addComponent(estado))
+                .addGap(13, 13, 13)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(fechadenac)
                     .addComponent(jDateNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -149,7 +158,7 @@ public class FormularioDeAlumno extends javax.swing.JInternalFrame {
                     .addComponent(jBeliminar)
                     .addComponent(jBguardar)
                     .addComponent(jBnuevo))
-                .addContainerGap(20, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
 
         pack();
@@ -166,21 +175,28 @@ public class FormularioDeAlumno extends javax.swing.JInternalFrame {
     private void jBnuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBnuevoActionPerformed
      int dni = Integer.parseInt(jtexDocumento.getText());
         
-     LocalDate FechaNac = LocalDate.now();
+        
+        
+     LocalDate FechaNac = jDateNacimiento.getDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
+        boolean activo = estado.isSelected();
      
     
-        Alumno a = new Alumno(dni, jtexNombre.getText(), jtexApellido.getText(), FechaNac , isIcon);
+        Alumno a = new Alumno(dni, jtexNombre.getText(), jtexApellido.getText(), FechaNac ,  activo);
         AlumnoData al = new AlumnoData();
         al.guardarAlumno(a);
     }//GEN-LAST:event_jBnuevoActionPerformed
+
+    private void jBeliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBeliminarActionPerformed
+       
+    }//GEN-LAST:event_jBeliminarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Apellido;
     private javax.swing.JLabel Estado;
     private javax.swing.JLabel Nombre;
-    private javax.swing.JRadioButton activo;
     private javax.swing.JLabel documento;
+    private javax.swing.JCheckBox estado;
     private javax.swing.JLabel fechadenac;
     private javax.swing.JButton jBbuscar;
     private javax.swing.JButton jBeliminar;

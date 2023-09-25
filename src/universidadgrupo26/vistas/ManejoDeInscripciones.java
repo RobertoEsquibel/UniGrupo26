@@ -44,6 +44,11 @@ private DefaultTableModel modelo= new DefaultTableModel();
         Alumno.setText("Seleccione un Alunmo");
 
         seleccion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        seleccion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                seleccionActionPerformed(evt);
+            }
+        });
 
         ListadoDeMateria.setText("Listado de Materias");
 
@@ -135,6 +140,10 @@ private DefaultTableModel modelo= new DefaultTableModel();
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void seleccionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_seleccionActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_seleccionActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

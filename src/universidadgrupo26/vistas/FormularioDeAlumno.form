@@ -56,11 +56,16 @@
                           <Component id="documento" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="jtexApellido" alignment="1" max="32767" attributes="0"/>
-                          <Component id="activo" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jtexNombre" max="32767" attributes="0"/>
-                          <Component id="jtexDocumento" alignment="1" pref="169" max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="1" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="jtexApellido" alignment="1" max="32767" attributes="0"/>
+                              <Component id="jtexNombre" max="32767" attributes="0"/>
+                              <Component id="jtexDocumento" alignment="1" pref="169" max="32767" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="estado" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
               </Group>
@@ -91,12 +96,12 @@
                   <Component id="Nombre" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jtexNombre" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="Estado" min="-2" max="-2" attributes="0"/>
-                  <Component id="activo" min="-2" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="Estado" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="estado" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="fechadenac" min="-2" max="-2" attributes="0"/>
                   <Component id="jDateNacimiento" min="-2" max="-2" attributes="0"/>
@@ -107,7 +112,7 @@
                   <Component id="jBguardar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jBnuevo" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="20" max="32767" attributes="0"/>
+              <EmptySpace pref="26" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -132,14 +137,14 @@
     </Component>
     <Component class="javax.swing.JLabel" name="Apellido">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Apellido"/>
+        <Property name="text" type="java.lang.String" value="Nombre"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jtexApellido">
     </Component>
     <Component class="javax.swing.JLabel" name="Nombre">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Nombre"/>
+        <Property name="text" type="java.lang.String" value="Apellido"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="jtexNombre">
@@ -148,8 +153,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Estado"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JRadioButton" name="activo">
     </Component>
     <Component class="javax.swing.JLabel" name="fechadenac">
       <Properties>
@@ -160,6 +163,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Eliminar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBeliminarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="jBguardar">
       <Properties>
@@ -178,6 +184,8 @@
       <Events>
         <EventHandler event="propertyChange" listener="java.beans.PropertyChangeListener" parameters="java.beans.PropertyChangeEvent" handler="jDateNacimientoPropertyChange"/>
       </Events>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="estado">
     </Component>
   </SubComponents>
 </Form>
