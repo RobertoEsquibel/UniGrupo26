@@ -139,9 +139,13 @@ public class MateriaData {
 
         } catch (SQLException ex) {
 
-            JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Materia" + ex.getMessage());
+             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla Materia" + ex.getMessage());
         }
         return materia;
+    }
+
+    public void guardarMateria(universidadgrupo26.vistas.Materia n) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
 }

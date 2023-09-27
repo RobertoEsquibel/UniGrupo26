@@ -12,11 +12,12 @@ import javax.swing.table.DefaultTableModel;
  * @author Marisa
  */
 public class ListadoDeAlumnoPorMateria extends javax.swing.JInternalFrame {
+
     private DefaultTableModel modelo = new DefaultTableModel();
-    public boolean isCellEditable(int f, int c){
-    return false;
+
+    public boolean isCellEditable(int f, int c) {
+        return false;
     }
-    
 
     /**
      * Creates new form ListadoDeAlumnoPorMateria
@@ -127,7 +128,7 @@ public class ListadoDeAlumnoPorMateria extends javax.swing.JInternalFrame {
 
     private void jcbMateriaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jcbMateriaKeyReleased
         // TODO add your handling code here:
-        
+
     }//GEN-LAST:event_jcbMateriaKeyReleased
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -140,28 +141,27 @@ public class ListadoDeAlumnoPorMateria extends javax.swing.JInternalFrame {
     private javax.swing.JTable jtAlumnosPorMateria;
     // End of variables declaration//GEN-END:variables
 
-private void armarCabecera(){
-modelo.addColumn("ID");
-modelo.addColumn("DNI");
-modelo.addColumn("Apellido");
-modelo.addColumn("Nombre");
-jtAlumnosPorMateria.setModel(modelo);
+    private void armarCabecera() {
+        modelo.addColumn("ID");
+        modelo.addColumn("DNI");
+        modelo.addColumn("Apellido");
+        modelo.addColumn("Nombre");
+        jtAlumnosPorMateria.setModel(modelo);
 
-}
+    }
 
-private void cargarComboMateria(){
+    private void cargarComboMateria() {
+        /*
     jcbMateria.addItem(new Materia(02, "Lengua", 2, true));
     jcbMateria.addItem(new Materia(01, "Matemática", 1, false));
     //NO PUDE AGREGAR LAS MATERIAS AL COMBOBOX
     //REVISAR
-    
-    
-   // private void cargarDatosTabla(Alumno alumno);{
-   // modelo.addRow(new Object[]{alumno.getID(), alumno.getDNI(), alumno.getApellido(), alumno.getNombre(); });
-}
-    
-    
-    
+         */
+
+        // private void cargarDatosTabla(Alumno alumno);{
+        // modelo.addRow(new Object[]{alumno.getID(), alumno.getDNI(), alumno.getApellido(), alumno.getNombre(); });
+    }
+
 }
 
 

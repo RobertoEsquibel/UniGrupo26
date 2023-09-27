@@ -19,59 +19,55 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
-              <Group type="103" groupAlignment="1" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
+              <Component id="tituloAlumno" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                      <Component id="fechadenac" min="-2" max="-2" attributes="0"/>
+                      <Component id="jBnuevo" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="Apellido" alignment="0" min="-2" pref="54" max="-2" attributes="0"/>
+                  <Component id="Nombre" alignment="0" min="-2" pref="66" max="-2" attributes="0"/>
+                  <Component id="Estado" alignment="0" min="-2" pref="56" max="-2" attributes="0"/>
+                  <Component id="documento" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="fechadenac" min="-2" max="-2" attributes="0"/>
-                          <Component id="jBnuevo" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="jDateNacimiento" min="-2" pref="122" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
                               <Component id="jBeliminar" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               <Component id="jBguardar" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jDateNacimiento" min="-2" pref="122" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="47" max="-2" attributes="0"/>
                           </Group>
                       </Group>
+                      <EmptySpace min="-2" pref="172" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="111" max="-2" attributes="0"/>
-                      <Component id="tituloAlumno" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="Apellido" alignment="0" min="-2" pref="54" max="-2" attributes="0"/>
-                          <Component id="Nombre" alignment="0" min="-2" pref="66" max="-2" attributes="0"/>
-                          <Component id="Estado" alignment="0" min="-2" pref="56" max="-2" attributes="0"/>
-                          <Component id="documento" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" attributes="0">
+                              <Component id="estado" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="jBbuscar" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jtexApellido" max="32767" attributes="0"/>
+                              <Component id="jtexDocumento" pref="169" max="32767" attributes="0"/>
+                              <Component id="jtexNombre" alignment="0" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="1" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="jtexApellido" alignment="1" max="32767" attributes="0"/>
-                              <Component id="jtexNombre" max="32767" attributes="0"/>
-                              <Component id="jtexDocumento" alignment="1" pref="169" max="32767" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="estado" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
                   </Group>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jBbuscar" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -84,7 +80,6 @@
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="documento" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jtexDocumento" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jBbuscar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -97,11 +92,12 @@
                   <Component id="jtexNombre" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="Estado" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="estado" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="estado" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="Estado" min="-2" max="-2" attributes="0"/>
+                  <Component id="jBbuscar" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="13" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Component id="fechadenac" min="-2" max="-2" attributes="0"/>
                   <Component id="jDateNacimiento" min="-2" max="-2" attributes="0"/>
@@ -112,7 +108,7 @@
                   <Component id="jBguardar" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jBnuevo" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="26" max="32767" attributes="0"/>
+              <EmptySpace pref="57" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -134,6 +130,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Buscar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBbuscarActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="Apellido">
       <Properties>

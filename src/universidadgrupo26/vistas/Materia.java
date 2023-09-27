@@ -5,6 +5,8 @@
  */
 package universidadgrupo26.vistas;
 
+import universidadgrupo26.accesoADatos.MateriaData;
+
 /**
  *
  * @author ELIANA
@@ -14,11 +16,11 @@ public class Materia extends javax.swing.JInternalFrame {
     /**
      * Creates new form Materia
      */
-    public Materia() {
+    public Materia(int codigo, String text, int anio, boolean activo) {
         initComponents();
     }
 
-    Materia(int i, String lengua, int i0, boolean b) {
+    Materia() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -40,11 +42,11 @@ public class Materia extends javax.swing.JInternalFrame {
         Año = new javax.swing.JLabel();
         jtexAño = new javax.swing.JTextField();
         Estado = new javax.swing.JLabel();
-        activo = new javax.swing.JRadioButton();
         nuevo = new javax.swing.JButton();
         eliminar = new javax.swing.JButton();
         guardar = new javax.swing.JButton();
         salir = new javax.swing.JButton();
+        CboxActivo = new javax.swing.JCheckBox();
 
         TituloMateria.setText("MATERIA");
 
@@ -59,12 +61,24 @@ public class Materia extends javax.swing.JInternalFrame {
         Estado.setText("Estado");
 
         nuevo.setText("Nuevo");
+        nuevo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                nuevoActionPerformed(evt);
+            }
+        });
 
         eliminar.setText("Eliminar");
 
         guardar.setText("Guardar");
 
         salir.setText("Salir");
+
+        CboxActivo.setText("jCheckBox1");
+        CboxActivo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CboxActivoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -84,12 +98,11 @@ public class Materia extends javax.swing.JInternalFrame {
                                     .addComponent(Estado)
                                     .addComponent(Codigo))
                                 .addGap(46, 46, 46)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(activo)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jtexCodigo)
-                                        .addComponent(jtexNombre)
-                                        .addComponent(jtexAño, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jtexCodigo)
+                                    .addComponent(jtexNombre)
+                                    .addComponent(jtexAño, javax.swing.GroupLayout.DEFAULT_SIZE, 112, Short.MAX_VALUE)
+                                    .addComponent(CboxActivo, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(buscar)
                         .addGap(51, 51, 51))
@@ -122,10 +135,10 @@ public class Materia extends javax.swing.JInternalFrame {
                     .addComponent(Año)
                     .addComponent(jtexAño, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Estado)
-                    .addComponent(activo, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                    .addComponent(CboxActivo))
+                .addGap(22, 22, 22)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(nuevo)
                     .addComponent(eliminar)
@@ -137,14 +150,32 @@ public class Materia extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void CboxActivoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CboxActivoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CboxActivoActionPerformed
+
+    private void nuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nuevoActionPerformed
+
+        int codigo = Integer.parseInt(jtexCodigo.getText());
+        int anio = Integer.parseInt(jtexAño.getText());
+
+        boolean activo = CboxActivo.isSelected();
+
+            Materia n = new Materia(codigo, jtexNombre.getText(), anio, activo);
+            MateriaData nm = new MateriaData();
+            nm.guardarMateria(n);
+       
+        
+    }//GEN-LAST:event_nuevoActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Año;
+    private javax.swing.JCheckBox CboxActivo;
     private javax.swing.JLabel Codigo;
     private javax.swing.JLabel Estado;
     private javax.swing.JLabel Nombre;
     private javax.swing.JLabel TituloMateria;
-    private javax.swing.JRadioButton activo;
     private javax.swing.JButton buscar;
     private javax.swing.JButton eliminar;
     private javax.swing.JButton guardar;
