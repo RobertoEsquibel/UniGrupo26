@@ -51,7 +51,6 @@ public class AlumnoData {
         Alumno alumno = null;
         String sql = "SELECT dni, apellido, nombre, fechaNacimiento FROM alumno WHERE idAlumno = ? AND estado = 1";
         PreparedStatement ps = null;
-        
         try {
             ps = con.prepareStatement(sql);
             ps.setInt(1, id);
@@ -79,7 +78,7 @@ public class AlumnoData {
 
     public Alumno buscarAlumnoPorDniAlumno(int dni) {
         Alumno alumno = null;
-        String sql = "SELECT idAlumno, dni, apellido, nombre, fechaNac FROM alumno WHERE dni=? AND estado = 1";
+        String sql = "SELECT idAlumno, dni, apellido, nombre, fechaNacimiento FROM alumno WHERE dni=? AND estado = 1";
         PreparedStatement ps = null;
         try {
             ps = con.prepareStatement(sql);
@@ -92,7 +91,7 @@ public class AlumnoData {
                 alumno.setDni(rs.getInt("dni"));
                 alumno.setApellido(rs.getString("apellido"));
                 alumno.setNombre(rs.getString("nombre"));
-                alumno.setFechaNac(rs.getDate("fechaNac").toLocalDate());
+                alumno.setFechaNac(rs.getDate("fechaNacimiento").toLocalDate());
                 alumno.setActivo(true);
 
             } else {

@@ -34,11 +34,13 @@
                                   <Component id="Codigo" alignment="0" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="jtexCodigo" max="32767" attributes="0"/>
-                                  <Component id="jtexNombre" max="32767" attributes="0"/>
-                                  <Component id="jtexAño" alignment="0" pref="112" max="32767" attributes="0"/>
-                                  <Component id="CboxActivo" alignment="0" min="-2" pref="21" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="activo" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="jtexCodigo" max="32767" attributes="0"/>
+                                      <Component id="jtexNombre" max="32767" attributes="0"/>
+                                      <Component id="jtexAño" alignment="0" pref="112" max="32767" attributes="0"/>
+                                  </Group>
                               </Group>
                           </Group>
                       </Group>
@@ -82,11 +84,11 @@
                   <Component id="jtexAño" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="Estado" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="CboxActivo" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="Estado" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="activo" min="-2" pref="23" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
                   <Component id="nuevo" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="eliminar" alignment="3" min="-2" max="-2" attributes="0"/>
@@ -135,13 +137,12 @@
         <Property name="text" type="java.lang.String" value="Estado"/>
       </Properties>
     </Component>
+    <Component class="javax.swing.JRadioButton" name="activo">
+    </Component>
     <Component class="javax.swing.JButton" name="nuevo">
       <Properties>
         <Property name="text" type="java.lang.String" value="Nuevo"/>
       </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="nuevoActionPerformed"/>
-      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="eliminar">
       <Properties>
@@ -157,14 +158,6 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Salir"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JCheckBox" name="CboxActivo">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="jCheckBox1"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="CboxActivoActionPerformed"/>
-      </Events>
     </Component>
   </SubComponents>
 </Form>
