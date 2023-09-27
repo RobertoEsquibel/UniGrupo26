@@ -17,7 +17,7 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import universidadgrupo26.entidades.Alumno;
 import universidadgrupo26.entidades.Inscripcion;
-import universidadgrupo26.vistas.Materia;
+import universidadgrupo26.entidades.Materia;
 
 /**
  ** @author Marisa
@@ -95,7 +95,7 @@ public class InscripcionData {
         }
    
     }
-  /* 
+   
     public List<Inscripcion> obtenerInscripciones(){
         ArrayList<Inscripcion>cursadas=new ArrayList<>();
         String sql = "SELECT * FROM inscripcion";
@@ -110,7 +110,7 @@ public class InscripcionData {
             Materia mat= md.buscarMateria(rs.getInt("idMateria"));//está el metodo?
             insc.setAlumno(alu);
             insc.setMateria(mat);
-            insc.getNota(rs.getDouble("nota"));
+            insc.setNota(rs.getDouble("nota"));
             cursadas.add(insc);
            
             }
@@ -120,9 +120,9 @@ public class InscripcionData {
         }
         return cursadas;
     }
-*/
+
    
-    /*
+    
      public List<Inscripcion> obtenerInscripcionPorAlumno(int idAlumno){
         ArrayList<Inscripcion>cursadas=new ArrayList<>();
         String sql = "SELECT * FROM inscripcion WHERE idAlumno=?";
@@ -139,7 +139,7 @@ public class InscripcionData {
             Materia mat= md.buscarMateria(rs.getInt("idMateria"));//está el metodo?
             insc.setAlumno(alu);
             insc.setMateria(mat);
-            insc.getNota(rs.getDouble("nota"));
+            insc.setNota(rs.getDouble("nota"));
             cursadas.add(insc);
            
             }
@@ -149,8 +149,8 @@ public class InscripcionData {
         }
         return cursadas;
     }
-     */
-    /*
+     
+    
     public List<Materia> obtenerMateriasCursadas(int idAlumno){
    
            ArrayList<Materia> materia = new ArrayList<>();
@@ -163,18 +163,18 @@ public class InscripcionData {
             ps.setInt(1, idAlumno);
             ResultSet rs = ps.executeQuery();
             while(rs.next()){
-            Materia materia = new Materia();
-            materia.idMateria(rs.getInt(idMateria));
-            materia.setNombre(rs.getString("nombre"));
-            materia.setAnioMateria(rs.getInt("año"));
-            materias.add(materia);
+            Materia materias = new Materia();
+            materias.setIdMateria(rs.getInt("idMateria"));
+            materias.setNombre(rs.getString("nombre"));
+            materias.setAnioMateria(rs.getInt("año"));
+            materia.add(materias);
             }
             ps.close();
      
                     } catch (SQLException ex) {
             JOptionPane.showMessageDialog(null, "Error al acceder a la tabla inscripcion ");
         }
-        return materias;
+        return materia;
                  
     }
    
@@ -191,7 +191,7 @@ public class InscripcionData {
             while(rs.next()){
            
                 Materia materia = new Materia();
-                materia.idMateria(rs.getInt(idMateria));
+                materia.setIdMateria(rs.getInt("idMateria"));
                 materia.setNombre(rs.getString("nombre"));
                 materia.setAnioMateria(rs.getInt("año"));
                 materias.add(materia);
@@ -203,8 +203,8 @@ public class InscripcionData {
            
            
         }
-   
-    } */
+   return materias;
+    } 
 
    
     public List<Alumno> obtenerAlumnoPorMateria(int idMateria){
