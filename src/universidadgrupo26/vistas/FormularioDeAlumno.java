@@ -44,6 +44,8 @@ public class FormularioDeAlumno extends javax.swing.JInternalFrame {
         jBnuevo = new javax.swing.JButton();
         jDateNacimiento = new com.toedter.calendar.JDateChooser();
         estado = new javax.swing.JCheckBox();
+        jLabel1 = new javax.swing.JLabel();
+        jtIdAlumno = new javax.swing.JTextField();
 
         tituloAlumno.setText("          ALUMNO");
 
@@ -81,6 +83,8 @@ public class FormularioDeAlumno extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel1.setText("idAlumno");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -98,7 +102,8 @@ public class FormularioDeAlumno extends javax.swing.JInternalFrame {
                                 .addComponent(jBeliminar)
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(jBguardar)
-                                .addGap(82, 82, 82))
+                                .addGap(48, 48, 48)
+                                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jDateNacimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -124,7 +129,9 @@ public class FormularioDeAlumno extends javax.swing.JInternalFrame {
                                 .addComponent(estado)
                                 .addGap(74, 74, 74)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jBbuscar)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jBbuscar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jtIdAlumno))
                 .addGap(15, 15, 15))
         );
         layout.setVerticalGroup(
@@ -157,8 +164,10 @@ public class FormularioDeAlumno extends javax.swing.JInternalFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBeliminar)
                     .addComponent(jBguardar)
-                    .addComponent(jBnuevo))
-                .addContainerGap(26, Short.MAX_VALUE))
+                    .addComponent(jBnuevo)
+                    .addComponent(jLabel1)
+                    .addComponent(jtIdAlumno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         pack();
@@ -187,7 +196,8 @@ public class FormularioDeAlumno extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jBnuevoActionPerformed
 
     private void jBeliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBeliminarActionPerformed
-       
+   AlumnoData e = new AlumnoData();
+   e.eliminarAlumno(Integer.parseInt(jtIdAlumno.getText()));
     }//GEN-LAST:event_jBeliminarActionPerformed
 
 
@@ -203,6 +213,8 @@ public class FormularioDeAlumno extends javax.swing.JInternalFrame {
     private javax.swing.JButton jBguardar;
     private javax.swing.JButton jBnuevo;
     private com.toedter.calendar.JDateChooser jDateNacimiento;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField jtIdAlumno;
     private javax.swing.JTextField jtexApellido;
     private javax.swing.JTextField jtexDocumento;
     private javax.swing.JTextField jtexNombre;
